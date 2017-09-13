@@ -1,12 +1,12 @@
 var data = [
   {
     name: 'kahs',
-    soundCloudID: '1234',
+    soundCloudID: '14960618',
     meaning: 'She lifts the name out of the water.'
   },
   {
     name: 'teio',
-    soundCloudID: '4321',
+    soundCloudID: '304019740',
     meaning: 'Bright Tree.'
   }
 ]
@@ -17,8 +17,9 @@ function directory(subdomains){
   datum = data.filter((el) => {
     console.log('el', el.name, subdomain)
     return el.name === subdomain
-  }) || null
-  if (datum[0]) return datum[0]
+  })[0] || null
+  datum.src=`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${datum.soundCloudID}&amp;color=00aabb&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false`
+  if (datum) return datum
 
   return null
 }
