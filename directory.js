@@ -18,8 +18,10 @@ function directory(subdomains){
     console.log('el', el.name, subdomain)
     return el.name === subdomain
   })[0] || null
-  datum.src=`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${datum.soundCloudID}&amp;color=00aabb&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false`
-  if (datum) return datum
+  if (datum) {
+    datum.src=`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${datum.soundCloudID}&amp;color=00aabb&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false`
+    return datum
+  }
 
   return null
 }
