@@ -11,8 +11,7 @@ var data = [
   }
 ]
 
-function directory(subdomains){
-  var subdomain = subdomains[0]
+function directory(subdomain){
 
   datum = data.filter((el) => {
     console.log('el', el.name, subdomain)
@@ -26,3 +25,4 @@ function directory(subdomains){
   return null
 }
 module.exports = directory
+module.exports.data = data

@@ -1,4 +1,11 @@
 extends layout
 
 block content
-  h1 Not found
+  h1 #{subdomain} Not found
+  p Try one of these instead.
+  ul
+    each el in data
+      li
+        a(href= `http://${el.name}.${host}` )= el.name
+        div= el.meaning
+        div= el.soundCloudID
